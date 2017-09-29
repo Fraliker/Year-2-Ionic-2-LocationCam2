@@ -1,0 +1,178 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- List of settings -->
+    <ion-list>
+    <!-- Content settings -->
+    
+    <ion-list-header>
+          Content
+    </ion-list-header>
+
+
+    <ion-item>
+      <ion-label>Location on pictures</ion-label>
+      <ion-toggle [ngModel]="settings.enableLocation" [settingsclick]="'enableLocation'" ></ion-toggle>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Date on pictures</ion-label>
+      <ion-toggle [ngModel]="settings.enableDate" [settingsclick]="'enableDate'"></ion-toggle>
+    </ion-item>
+    
+    
+    <div *ngIf="settings.enableLocation || settings.enableDate"> <!-- Hide the styling if no content is needed --> 
+        <!-- Position settings -->
+        <ion-list-header>
+              Position
+        </ion-list-header>
+          <ion-item>
+            <ion-label>Vertical</ion-label>
+            <ion-select [ngModel]="settings.textPositionVertical" [settingsclick]="'textPositionVertical'">
+              <ion-option>Top</ion-option>
+              <ion-option>Middle</ion-option>
+              <ion-option>Bottom</ion-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label>Horizontal</ion-label>
+            <ion-select [ngModel]="settings.textPositionHorizontal" [settingsclick]="'textPositionHorizontal'">
+              <ion-option>Left</ion-option>
+              <ion-option>Center</ion-option>
+              <ion-option>Right</ion-option>
+            </ion-select>
+          </ion-item>
+        <!-- Font settings/styling -->
+        <ion-list-header>
+              Font
+        </ion-list-header>
+        <label class="item " style="position: static; overflow: visible; min-height: 66px;">
+                <div class="input-label" style="float: left;">
+                  Colour
+                </div>
+                <div style="float:right">
+                </div>
+          </label>
+        <ion-item>
+            <ion-label>Style</ion-label>
+            <ion-select [ngModel]="settings.fontStyle" [settingsclick]="'fontStyle'">
+              <ion-option>Normal</ion-option>
+              <ion-option>Italic</ion-option>
+              <ion-option>Oblique</ion-option>
+            </ion-select>
+          </ion-item>
+        <ion-item>
+            <ion-label>Variant</ion-label>
+            <ion-select [ngModel]="settings.fontVariant" [settingsclick]="'fontVariant'">
+              <ion-option>Normal</ion-option>
+              <ion-option>Small-Caps</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Weight</ion-label>
+            <ion-select [ngModel]="settings.fontWeight" [settingsclick]="'fontWeight'">
+              <ion-option>Normal</ion-option>
+              <ion-option>Bold</ion-option>
+              <ion-option>Bolder</ion-option>
+              <ion-option>Lighter</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Size</ion-label>
+            <ion-select [ngModel]="settings.fontSize" [settingsclick]="'fontSize'">
+              <ion-option>15</ion-option>
+              <ion-option>20</ion-option>
+              <ion-option>25</ion-option>
+              <ion-option>30</ion-option>
+              <ion-option>35</ion-option>
+              <ion-option>40</ion-option>
+              <ion-option>45</ion-option>
+              <ion-option>50</ion-option>
+              <ion-option>55</ion-option>
+              <ion-option>60</ion-option>
+              <ion-option>65</ion-option>
+              <ion-option>70</ion-option>
+              <ion-option>75</ion-option>
+              <ion-option>80</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Family</ion-label>
+            <ion-select [ngModel]="settings.fontFamily" [settingsclick]="'fontFamily'">
+              <ion-option value='Arial,"Helvetica Neue",Helvetica,sans-serif'>Arial</ion-option>
+              <ion-option value='"Arial Black","Arial Bold",Gadget,sans-serif'>Arial Black</ion-option>
+              <ion-option value='"Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,AppleGothic,sans-serif'>Avant Garde</ion-option>
+              <ion-option value='Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif'>Calibri</ion-option>
+              <ion-option value='Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif'>Candara</ion-option>
+              <ion-option value='"Century Gothic",CenturyGothic,AppleGothic,sans-serif'>Country Gothic</ion-option>
+              <ion-option value='"Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif'>Franklin Gothic</ion-option>
+              <ion-option value='Futura,"Trebuchet MS",Arial,sans-serif'>Futura</ion-option>
+              <ion-option value='Geneva,Tahoma,Verdana,sans-serif'>Geneva</ion-option>
+              <ion-option value='"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif'>Lucida Grande</ion-option>
+              <ion-option value='Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif"'>Impact</ion-option>
+              <ion-option value='"Helvetica Neue",Helvetica,Arial,sans-serif'>Helvetica</ion-option>
+              <ion-option value='"Gill Sans","Gill Sans MT",Calibri,sans-serif'>Gill Sans</ion-option>
+              <ion-option value='Tahoma,Verdana,Segoe,sans-serif'>Tahoma</ion-option>
+              <ion-option value='Verdana,Geneva,sans-serif'>Verdana</ion-option>
+              <ion-option value='Verdana,Geneva,sans-serif'>Garamond</ion-option>
+              <ion-option value='TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif'>Times New Roman</ion-option>
+              <ion-option value='Consolas,monaco,monospace'>Consolas</ion-option>
+              <ion-option value='"Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace'>Courier New</ion-option>
+              <ion-option value='Papyrus,fantasy'>Papyrus</ion-option>
+              <ion-option value='Copperplate,"Copperplate Gothic Light",fantasy'>Copperplate</ion-option>
+              <ion-option value='"Brush Script MT",cursive'>Brush Script</ion-option>
+            </ion-select>
+          </ion-item>
+        <!-- Box settings/styling -->  
+        <ion-list-header>
+              Text Box
+        </ion-list-header>
+
+        <ion-item>
+           <ion-label> Show</ion-label>
+           <ion-toggle [ngModel]="settings.textBoxShow" [settingsclick]="'textBoxShow'"></ion-toggle>
+        </ion-item>
+        
+               
+        
+        <ion-item class="item " style="position: static; overflow: visible; min-height: 66px;">
+                <div class="input-label" style="float: left;">
+                  Colour
+                </div>
+                <div style="float:right">
+                </div>
+          </ion-item>
+      </div>
+      <!-- Camera settings -->
+       <ion-list-header>
+          Camera
+       </ion-list-header>
+       <ion-item>
+            <ion-label>Quality</ion-label>
+            <ion-select [ngModel]="settings.camQuality" [settingsclick]="'camQuality'">
+              <ion-option value="100">Max</ion-option>
+              <ion-option value="50">Medium</ion-option>
+              <ion-option value="20">Low</ion-option>
+            </ion-select>
+          </ion-item>
+
+         <ion-item>
+            <ion-label>Edit after capture</ion-label>
+            <ion-toggle [ngModel]="settings.camEditable"[settingsclick]="'camEditable'"></ion-toggle>
+         </ion-item>
+       
+
+          <ion-item>
+              <ion-label>Save plain image</ion-label>
+              <ion-toggle [ngModel]="settings.saveToGallery"[settingsclick]="'saveToGallery'"></ion-toggle>   
+          </ion-item>
+       
+    </ion-list>
+</ion-content>

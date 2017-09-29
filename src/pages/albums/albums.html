@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Location Cam 2
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- The messages from the controller -->
+    <span id="gpsLoading" class="messageSpan">{{message}}</span>
+    <!-- Icon for camera loading -->
+    <p align="center" *ngIf="libraryLoading">
+        <ion-spinner icon="crescent"></ion-spinner>
+    </p>
+    <!-- The phone picture gallery grid -->
+    <ion-grid *ngIf="library!=null">
+      <ion-row wrap>
+        <ion-col width-33 *ngFor="let libraryItem of library.slice().reverse()">
+            <img [src]="libraryItem.thumbnailURL | cdvphotolibrary" (click)="openPicture(libraryItem)">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

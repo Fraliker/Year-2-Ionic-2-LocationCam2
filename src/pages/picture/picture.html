@@ -1,0 +1,16 @@
+<div class="modal image-modal">
+                  <ion-content class="transparent">
+                        <div id="button-container">
+                                <button ion-button icon-only  (click)="close()">
+                                    <ion-icon name="arrow-back"></ion-icon>
+                                </button>
+                                <button ion-button icon-only item-right  (click)="share()" class="picture-button">
+                                    <ion-icon name="share"></ion-icon>
+                                </button>
+                        </div>
+                        <div *ngIf="picture!=null">
+                          <img [src]="picture.photoURL | cdvphotolibrary" class="fullscreen-image" style="z-index:1"  (click)="close()">
+                        </div>
+                  </ion-content>
+              </div>
+
